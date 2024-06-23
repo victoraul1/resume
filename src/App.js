@@ -15,10 +15,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React Now Please this changed
+          Aprende React Ahora
         </a>
       </header>
     </div>
+
   );
 }
 
