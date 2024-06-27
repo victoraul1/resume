@@ -11,7 +11,7 @@ function Resume() {
         <div className="header-info">
           <h1>Victor R Galindo</h1>
           <h2>Web Developer</h2>
-          <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+          <p>Contribute to the growth of a company or corporation by developing solutions to current business challenges.</p>
         </div>
       </div>
 
@@ -20,19 +20,19 @@ function Resume() {
           <section>
             <h3>Contact</h3>
             <div className="underline"></div>
-            <p>PHONE: 212-123-1234</p>
-            <p>EMAIL: youremail@mail.com</p>
-            <p>WEB: linkedin.com/CareerReload</p>
-            <p>HOME: New York, NY 33407</p>
+            <p>(818) 721-6496</p>
+            <p>victorgalindo475@gmail.com</p>
+            <p>www.victorgalindo.com</p>
+            <p>Long Beach, CA 90807</p>
           </section>
 
           <section>
-            <h3>Skills</h3>
+            <h3>Skills</h3> 
             <div className="underline"></div>
-            <p><strong>DESIGN SOFTWARES:</strong> Adobe Photoshop, InDesign, Illustrator, Dreamweaver</p>
-            <p><strong>WEB-BASED APPLICATIONS:</strong> WordPress, Blogger, HTML & CSS</p>
-            <p><strong>RESEARCH TOOLS:</strong> Google Advanced Search, Google Analytics, SPSS</p>
-            <p><strong>OFFICE TOOLS:</strong> Microsoft Word, Excel, PowerPoint, Access</p>
+            <p><strong>DESIGN SOFTWARES:</strong> Adobe Photoshop, Adobe Premierer</p>
+            <p><strong>Programming:</strong> HTML, CSS, Javascript React, Python, Flutter</p>
+            <p><strong>Analytics:</strong> Google Analytics, Adobe Analytics</p>
+            <p><strong>AI:</strong>chatGPT, NLP, Machine Learning, Generative AI</p>
           </section>
 
           <section>
