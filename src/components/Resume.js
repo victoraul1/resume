@@ -32,7 +32,7 @@ function Resume() {
             <p><strong>DESIGN SOFTWARES:</strong> Adobe Photoshop, Adobe Premierer</p>
             <p><strong>Programming:</strong> HTML, CSS, Javascript React, Python, Flutter</p>
             <p><strong>Analytics:</strong> Google Analytics, Adobe Analytics</p>
-            <p><strong>AI:</strong>chatGPT, NLP, Machine Learning, Generative AI</p>
+            <p><strong>AI: </strong>chatGPT, NLP, Machine Learning, Generative AI</p>
           </section>
 
           <section>
