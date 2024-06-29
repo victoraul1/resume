@@ -18,7 +18,7 @@ function Resume() {
       <div className="resume-body">
         <div className="resume-left">
           <section>
-            <h3>Contact</h3>
+            <h3>Contact:</h3>
             <div className="underline"></div>
             <p>(818) 721-6496</p>
             <p>victorgalindo475@gmail.com</p>
