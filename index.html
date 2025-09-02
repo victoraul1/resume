@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor R Galindo - Web Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.8.2/docx.min.js"></script>
+</head>
+<body>
+    <!-- Password Modal -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <h2>Enter Password</h2>
+            <input type="password" id="passwordInput" maxlength="4" placeholder="Enter 4-digit password">
+            <button onclick="checkPassword()">Submit</button>
+            <div id="passwordError" class="error-message"></div>
+        </div>
+    </div>
+
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <button id="editBtn" onclick="toggleEditMode()" style="display: none;">Edit Resume</button>
+        <button id="saveBtn" onclick="saveChanges()" style="display: none;">Save Changes</button>
+        <button id="cancelBtn" onclick="cancelEdit()" style="display: none;">Cancel</button>
+        <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+        <button onclick="exportPDF()">📄 Download PDF</button>
+        <button onclick="exportDOCX()">📝 Download DOCX</button>
+        <button onclick="shareResume()">🔗 Share</button>
+        <button id="loginBtn" onclick="showPasswordModal()">🔐 Login to Edit</button>
+        <button id="logoutBtn" onclick="logout()" style="display: none;">🔓 Logout</button>
+    </div>
+
+    <!-- Main Resume Container -->
+    <div class="resume-container" id="resumeContent">
+        <!-- Header Section -->
+        <header class="resume-header">
+            <div class="profile-section">
+                <div class="profile-info">
+                    <h1 class="editable" data-field="name">Victor R Galindo</h1>
+                    <h2 class="editable" data-field="title">Web Developer</h2>
+                    <p class="editable" data-field="summary">Contribute to the growth of a company or corporation by developing solutions to current business challenges.</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="resume-body">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Contact Section -->
+                <section class="resume-section">
+                    <h3>Contact</h3>
+                    <div class="contact-info">
+                        <p class="editable" data-field="phone">(818) 721-6496</p>
+                        <p class="editable" data-field="email">victorgalindo475@gmail.com</p>
+                        <p class="editable" data-field="website">www.victoraul.com/tracker</p>
+                        <p class="editable" data-field="address">Long Beach, CA 90807</p>
+                    </div>
+                </section>
+
+                <!-- Skills Section -->
+                <section class="resume-section">
+                    <h3>Skills</h3>
+                    <div class="skills-content">
+                        <div class="skill-category">
+                            <strong>Programming:</strong>
+                            <span class="editable" data-field="programming-skills">HTML, CSS, Javascript, Node.js, nginx, React, Python, Flutter</span>
+                        </div>
+                        <div class="skill-category">
+                            <strong>Analytics:</strong>
+                            <span class="editable" data-field="analytics-skills">Google Analytics, Adobe Analytics</span>
+                        </div>
+                        <div class="skill-category">
+                            <strong>AI:</strong>
+                            <span class="editable" data-field="ai-skills">chatGPT, NLP, Machine Learning, Generative AI</span>
+                        </div>
+                        <div class="skill-category">
+                            <strong>Design Software:</strong>
+                            <span class="editable" data-field="design-skills">Adobe Photoshop, Adobe Premiere</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section class="resume-section">
+                    <h3>Projects | Portfolio</h3>
+                    <div class="projects-list">
+                        <div class="project-item">
+                            <strong>React</strong> <span class="editable" data-field="project1-url">www.readmysubjective.com</span>
+                        </div>
+                        <div class="project-item">
+                            <strong>PHP</strong> <span class="editable" data-field="project2-url">www.moveyourcar.org</span>
+                        </div>
+                        <div class="project-item">
+                            <strong>Flutter</strong> <span class="editable" data-field="project3-url">www.constitution.pe</span>
+                        </div>
+                        <div class="project-item">
+                            <strong>Cursor AI</strong> <span class="editable" data-field="project4-url">www.victoraul.com/tracker</span>
+                        </div>
+                        <div class="project-item">
+                            <strong>Wordpress</strong>
+                            <div class="editable" data-field="wordpress-urls">www.mimenu.pe<br>
+                            www.automovil.tech<br>
+                            www.elecciones2026.pe<br>
+                            www.hn-rewards.com</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications Section -->
+                <section class="resume-section">
+                    <h3>Certifications</h3>
+                    <p class="editable" data-field="certification">Salesforce Certified Marketing Cloud Email Specialist</p>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Work Experience Section -->
+                <section class="resume-section">
+                    <h3>Work Experience</h3>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h4 class="editable" data-field="job1-title">Digital Marketing Specialist</h4>
+                            <span class="date editable" data-field="job1-date">2022 - Present</span>
+                        </div>
+                        <p class="editable" data-field="job1-company">Herbalife | Torrance, CA</p>
+                        <div class="experience-details">
+                            <p class="editable" data-field="job1-studio">Email Studio:</p>
+                            <ul class="editable-list" data-field="job1-responsibilities">
+                                <li>Build, test, deploy, and metrics report</li>
+                                <li>Email journey building</li>
+                                <li>Audience segmentation and automations</li>
+                            </ul>
+                            <p class="editable" data-field="job1-sms">SMS:</p>
+                            <ul class="editable-list" data-field="job1-sms-responsibilities">
+                                <li>Setup and schedule sends</li>
+                                <li>Audience list management</li>
+                                <li>Process documentation and training</li>
+                            </ul>
+                            <p class="editable" data-field="job1-adobe">Adobe Experience Manager:</p>
+                            <ul class="editable-list" data-field="job1-adobe-responsibilities">
+                                <li>Build and update pages</li>
+                                <li>Setup e-commerce product pages</li>
+                                <li>Asset management</li>
+                            </ul>
+                            <p class="editable" data-field="job1-strategy">Strategy:</p>
+                            <ul class="editable-list" data-field="job1-strategy-responsibilities">
+                                <li>Provide recommendations based on metrics</li>
+                                <li>Build wireframes for better engagement</li>
+                                <li>Advice on Email subject lines and pre-header</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h4 class="editable" data-field="job2-title">Salesforce Email Studio Administrator</h4>
+                            <span class="date editable" data-field="job2-date">2018 - 2020</span>
+                        </div>
+                        <p class="editable" data-field="job2-company">Fox 20th Century Studios | Century City, CA</p>
+                        <div class="experience-details">
+                            <p class="editable" data-field="job2-studio">Email Studio:</p>
+                            <ul class="editable-list" data-field="job2-responsibilities">
+                                <li>Build, test, deploy, provide reports</li>
+                                <li>Email journey building</li>
+                                <li>SFMC user administration</li>
+                                <li>OKTA admin</li>
+                                <li>Audience segmentation</li>
+                            </ul>
+                            <p class="editable" data-field="job2-web">Web CMS:</p>
+                            <ul class="editable-list" data-field="job2-web-responsibilities">
+                                <li>Build and update pages</li>
+                                <li>Google Analytics admin</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h4 class="editable" data-field="job3-title">Web Operations Developer</h4>
+                            <span class="date editable" data-field="job3-date">2017 - 2018</span>
+                        </div>
+                        <p class="editable" data-field="job3-company">American Botanical Pharmacy | Marina del Rey, CA</p>
+                        <div class="experience-details">
+                            <p class="editable" data-field="job3-mailchimp">Mailchimp Administrator:</p>
+                            <ul class="editable-list" data-field="job3-mailchimp-responsibilities">
+                                <li>Build, test, deploy, and metrics report</li>
+                                <li>Email automations</li>
+                                <li>Audience segmentation</li>
+                            </ul>
+                            <p class="editable" data-field="job3-cms">CMS Management:</p>
+                            <ul class="editable-list" data-field="job3-cms-responsibilities">
+                                <li>Build and update pages</li>
+                                <li>Setup e-commerce product pages</li>
+                                <li>Asset management</li>
+                                <li>Google Analytics metrics</li>
+                                <li>Social media PPC campaign management</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h4 class="editable" data-field="job4-title">Web Content Publisher</h4>
+                            <span class="date editable" data-field="job4-date">2013 - 2017</span>
+                        </div>
+                        <p class="editable" data-field="job4-company">Herbalife | Torrance, CA</p>
+                        <div class="experience-details">
+                            <p class="editable" data-field="job4-salesforce">Salesforce ExactTarget:</p>
+                            <ul class="editable-list" data-field="job4-salesforce-responsibilities">
+                                <li>Build, test, deploy, and metrics report</li>
+                                <li>Email journey building</li>
+                                <li>Audience segmentation and automations</li>
+                                <li>Process documentation and training</li>
+                            </ul>
+                            <p class="editable" data-field="job4-teamsite">Teamsite (CMS):</p>
+                            <ul class="editable-list" data-field="job4-teamsite-responsibilities">
+                                <li>Build and update pages</li>
+                                <li>Setup e-commerce product pages</li>
+                                <li>Asset management</li>
+                            </ul>
+                            <p class="editable" data-field="job4-sms">SMS:</p>
+                            <ul class="editable-list" data-field="job4-sms-responsibilities">
+                                <li>Setup and schedule sends</li>
+                                <li>Audience list management</li>
+                                <li>Process documentation and training</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section class="resume-section">
+                    <h3>Education</h3>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <strong class="editable" data-field="degree1">BACHELORS DEGREE in Information Technology</strong>
+                            <span class="editable" data-field="degree1-year">2014 University of Phoenix - 2017</span>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <strong class="editable" data-field="degree2">ASSOCIATES DEGREE in Computer Networking</strong>
+                            <span class="editable" data-field="degree2-year">2004 College of the Canyons - 2007</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
