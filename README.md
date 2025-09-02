@@ -4,7 +4,7 @@ A modern, responsive resume website with password-protected editing capabilities
 
 ## Features
 
-- **Password Protected Editing**: Secure 4-digit password authentication for edit mode
+- **Password Protected Editing**: Secure 6-digit password authentication for edit mode
 - **Live Editing**: Edit resume content directly in the browser
 - **Dark Mode**: Toggle between light and dark themes
 - **Export Options**: Download resume as PDF or DOCX
@@ -45,7 +45,7 @@ Simply open `index.html` in a web browser. All features work except server persi
 ### Editing Your Resume
 
 1. Click **"Login to Edit"** button
-2. Enter the password: `1234` (default)
+2. Enter the password: `123456` (default)
 3. Click **"Edit Resume"** to enter edit mode
 4. Click on any text to edit it directly
 5. Click on profile image to upload a new one
@@ -56,7 +56,7 @@ Simply open `index.html` in a web browser. All features work except server persi
 
 Edit line 2 in `script.js`:
 ```javascript
-const PASSWORD = '1234'; // Change this to your desired 4-digit password
+const PASSWORD = '123456'; // Change this to your desired 6-digit password
 ```
 
 ### Features
@@ -126,7 +126,7 @@ resume/
 
 ## Security Notes
 
-- The default password is `1234` - change it immediately
+- The default password is `123456` - change it immediately
 - Password is stored in plain text in the JavaScript file
 - For production use, consider implementing proper authentication
 - Data is stored locally in browser storage and optionally on server
@@ -134,7 +134,7 @@ resume/
 ## Troubleshooting
 
 **Password not working?**
-- Check that you're entering exactly 4 digits
+- Check that you're entering exactly 6 digits
 - Clear browser cache and try again
 
 **Changes not saving?**

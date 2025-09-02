@@ -1,5 +1,5 @@
 // Configuration
-const PASSWORD = '1234'; // Change this to your desired 4-digit password
+const PASSWORD = '123456'; // Change this to your desired 6-digit password
 let isLoggedIn = false;
 let isEditMode = false;
 let originalContent = {};

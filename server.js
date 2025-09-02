@@ -56,7 +56,7 @@ app.listen(PORT, async () => {
     
     Access your resume at: http://localhost:${PORT}
     
-    Default password: 1234
+    Default password: 123456
     (Change this in script.js)
     
     Features:
